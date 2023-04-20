@@ -1,0 +1,22 @@
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;  
+}
+.item{
+    box-shadow: 0 0 3px gray;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.cartbutton{
+    margin: .8rem;
+    padding: .5rem 1.5rem;
+    color:white;
+    background-color: orange;
+    border: none;
+    font-size: 1rem;
+}

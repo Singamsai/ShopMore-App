@@ -1,0 +1,24 @@
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+.cartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 3px gray;
+    margin: 1rem;
+    width: 600px;
+}
+.cartItem button{
+    padding: .5rem 1.5rem;
+    background-color: red;
+    border: none;
+    color: white;
+    outline: none;
+    
+}
