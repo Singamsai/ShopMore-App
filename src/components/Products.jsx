@@ -24,7 +24,6 @@ export default function Products() {
   }, [loading, dispatch, product.length]);
   return (
     <div>
-      <h1>Products</h1>
       <br />
       {loading ? (
         <Spinner />

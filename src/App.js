@@ -1,16 +1,20 @@
 import "./App.css";
-import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import { Routes, Route } from "react-router-dom";
 import AddtoCart from "./components/AddtoCart";
 import Products from "./components/Products";
-import { useEffect, useState } from "react";
+import { useEffect, useState , createContext} from "react";
 import { useDispatch } from "react-redux";
 import { Cart } from "./redux/Action";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PrimarySearchAppBar from "./components/Navbar/PrimarySearchAppBar";
 
+export const currentProductDetails = createContext();
 function App() {
+  const [state, setstate]= useState();
+  const [addcart, setaddcart] = useState([])
+
   const [addtocart, setAddtocart] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,8 +22,9 @@ function App() {
   }, [addtocart, dispatch]);
   return (
     <>
+    <currentProductDetails.Provider value={{state, setstate, addcart, setaddcart}}>
       <div className="App">
-        <Nav />
+        <PrimarySearchAppBar />
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/home" element={<Homepage />}></Route>
@@ -39,6 +44,8 @@ function App() {
         pauseOnHover
         theme="dark"
       />
+      </currentProductDetails.Provider>
+
     </>
   );
 }
