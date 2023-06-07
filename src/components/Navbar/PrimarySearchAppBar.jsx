@@ -65,7 +65,7 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const navigate = useNavigate();
-  let contain = addtocart.length;
+  let contain = addtocart?addtocart.length:0;
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
